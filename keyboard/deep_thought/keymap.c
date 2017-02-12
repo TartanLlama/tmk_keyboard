@@ -3,7 +3,7 @@
 const uint8_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
     /* 0: dvorak */
     KEYMAP(
-        TAB, QUOT,COMM,DOT, P,   Y,   F,   G,   C,   R,   L,   BSPC,MACRO, \
+        TAB, QUOT,COMM,DOT, P,   Y,   F,   G,   C,   R,   L,   BSPC,FN3, \
         LCTL,A,   O,   E,   U,   I,   D,   H,   T,   N,   S,   ENT,     \
         LSFT,SCLN,Q,   J,   K,   X,   B,   M,   W,   V,   Z,             DEL, \
         CAPS,LGUI,LALT,ESC, SPC,      FN0, FN1, LEFT,DOWN,UP,RIGHT)
