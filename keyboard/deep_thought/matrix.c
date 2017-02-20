@@ -92,12 +92,12 @@ matrix_row_t matrix_get_row(uint8_t row)
 
 /* Column pin configuration
  * col: 0   1   2   3   4   5   6   7   8   9   10  11  12
- * pin: D7  D5  C7  C6  D3  D2  D1  D0  B7  B3  B2  B1  B0 */
+ * pin: D7  D6  C7  C6  D3  D2  D1  D0  B7  B3  B2  B1  B0 */
 static void  init_cols(void)
 {
     // Input with pull-up(DDR:0, PORT:1)
-    DDRD  &= ~(1<<7 | 1<<5 | 1<<3 | 1<<2 | 1<<1 | 1<<0);
-    PORTD |=  (1<<7 | 1<<5 | 1<<3 | 1<<2 | 1<<1 | 1<<0);
+    DDRD  &= ~(1<<7 | 1<<6 | 1<<3 | 1<<2 | 1<<1 | 1<<0);
+    PORTD |=  (1<<7 | 1<<6 | 1<<3 | 1<<2 | 1<<1 | 1<<0);
     DDRC  &= ~(1<<7 | 1<<6);
     PORTC |=  (1<<7 | 1<<6);
     DDRB  &= ~(1<<7 | 1<<3 | 1<<2 | 1<<1 | 1<<0);
@@ -107,7 +107,7 @@ static void  init_cols(void)
 static matrix_row_t read_cols(void)
 {
     return (PIND&(1<<7) ? 0 : (1<<0)) |
-           (PIND&(1<<5) ? 0 : (1<<1)) |
+           (PIND&(1<<6) ? 0 : (1<<1)) |
            (PINC&(1<<7) ? 0 : (1<<2)) |
            (PINC&(1<<6) ? 0 : (1<<3)) |
            (PIND&(1<<3) ? 0 : (1<<4)) |
